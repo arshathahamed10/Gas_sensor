@@ -30,7 +30,7 @@ const gaugeElement3 = document.querySelector(".gauge__body3");
 const gaugeElement4 = document.querySelector(".gauge__body4");
 const gaugeElement5 = document.querySelector(".gauge__body5");
 const ppmElement = document.querySelector(".ppm");
-
+let sp = 1500;
 function setGaugeValue(gauge, value) {
   if (value < 0 || value > 1.01) {
     return;
@@ -42,7 +42,11 @@ function setGaugeValue(gauge, value) {
   gauge.querySelector(".gauge__cover").textContent = `${Math.round(
     value * 100
   )} ppm`;
-  if(value > 0.5 && value < 0.75)
+  if(value <= 0.5)
+  {
+    gauge.querySelector(".gauge__fill").style.background=`#00ff00`;
+  }
+  else if(value > 0.5 && value < 0.75)
   {
     gauge.querySelector(".gauge__fill").style.background=`#ffa400`;
   }
@@ -53,18 +57,18 @@ function setGaugeValue(gauge, value) {
 }
 let v = 0;
 let p2 = setInterval(() => {
-    setGaugeValue(gaugeElement1, v);
-    setGaugeValue(gaugeElement2, v);
-    setGaugeValue(gaugeElement3, v);
-    setGaugeValue(gaugeElement4, v);
-    setGaugeValue(gaugeElement5, v);
-    v = v + 0.01;
+    
+    v = Math.random();
     console.log(v);
-    if(v>=0.81)
+    if(v<0.81)
     {
-        clearInterval(p2);
+        setGaugeValue(gaugeElement1, v);
+        setGaugeValue(gaugeElement2, v);
+        setGaugeValue(gaugeElement3, v);
+        setGaugeValue(gaugeElement4, v);
+        setGaugeValue(gaugeElement5, v);
     }
-}, speed);
+}, sp);
 let bp = 0;
 // ppm range - 
 let pp =setInterval(() => {

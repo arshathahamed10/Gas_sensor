@@ -1,22 +1,22 @@
 let circularProgress = document.querySelector(".circular-progress"),
 progressValue = document.querySelector(".progress-value");
-let progressStartValue = 0,
-    progressEndValue = 90,
+let progressStartValue = 95,
+    progressEndValue = 10,
     speed = 50;
 let progress = setInterval(() => {
-    progressStartValue++;
+    progressStartValue--;
     progressValue.textContent= `${progressStartValue}%`
     console.log(progressStartValue)
     if(progressStartValue <= 35)
     {
-        circularProgress.style.background = `conic-gradient(#00ff00 ${progressStartValue * 3.6}deg , #ededed 0deg)`;
+        circularProgress.style.background = `conic-gradient(#ff0000 ${progressStartValue * 3.6}deg , #ededed 0deg)`;
     }
     else if(progressStartValue > 35 && progressStartValue < 55)
     {
         circularProgress.style.background = `conic-gradient(#ffa400 ${progressStartValue * 3.6}deg , #ededed 0deg)`;
     }
     else{
-        circularProgress.style.background = `conic-gradient(#ff0000 ${progressStartValue * 3.6}deg , #ededed 0deg)`;
+        circularProgress.style.background = `conic-gradient(#00ff00 ${progressStartValue * 3.6}deg , #ededed 0deg)`;
     }
     if(progressStartValue==progressEndValue)
     {

@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body
+{
+    background-color: black;
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.container
+{
+    position: absolute;
+    top:100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 100px;
+}
+h1
+{
+    font-weight: 800;
+    font-size: 100px;
+}
+.down
+{
+    
+    display: flex;
+    min-width:900px;
+    padding:50px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    /* flex-direction: column; */
+    align-items: center;
+    row-gap: 30px;
+    margin-bottom: 60px;
+}
+.oxygen
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 140px;
+    row-gap: 30px;
+}
+.oxyword
+{
+  position: relative;
+  bottom:50px;
+  margin-left:100px;
+}
+.mop
+{
+  font-size: 22px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:30px;
+}
+.circular-progress
+{
+    position: relative;
+    background-color: #800080;
+    width:250px;
+    height : 250px;
+    border-radius: 50%;
+    background: conic-gradient(#800080 3.6deg , #ededed 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circular-progress::before
+{
+    content : "";
+    position: absolute;
+    height: 200px;
+    width : 200px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.progress-value
+{
+    position : relative;
+    font-size: 40px;
+    font-weight: 600;
+    color: #800080;
+}
+.text,.ppm
+{
+    font-size: 30px;
+    font-weight: 500;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topic
+{
+    color:#fff;
+}
+.gauge {
+  width: 100%;
+  min-width: 900px;
+  font-size: 32px;
+  color: #004033;
+  display: grid;
+  gap: 100px 100px;
+  grid-template-columns: repeat(3, 1fr); /* Three columns in the first row */
+  grid-template-rows: auto auto; /* Two rows */
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.gauge__body1,.gauge__body5,.gauge__body4,.gauge__body3,.gauge__body2 {
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  background: #b4c0be;
+  position: relative;
+  border-top-left-radius: 100% 200%;
+  border-top-right-radius: 100% 200%;
+  overflow: hidden;
+}
+
+.gauge__fill {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: inherit;
+  height: 100%;
+  background: #00ff00;
+  transform-origin: center top;
+  transform: rotate(0.25turn);
+  transition: transform 0.2s ease-out;
+}
+
+.gauge__cover {
+  width: 75%;
+  height: 150%;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25%;
+  box-sizing: border-box;
+}
+.item4
+{
+    position: relative;
+    left:120px;
+} 
+.gift
+{
+    margin-top: 40px;
+    margin-left: 200px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000;
+}
+.ppm
+{
+    position: relative;
+    left:90px;
+    bottom:60px;
+}
+.ant
+{
+    position: relative;
+    left:100px;
+    top:-50px;
+}

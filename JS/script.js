@@ -1,26 +1,26 @@
 
 let circularProgress = document.querySelector(".circular-progress"),
 progressValue = document.querySelector(".progress-value");
-let progressStartValue = 95,
-    progressEndValue = 10,
-    speed = 500;
+let progressStartValue = 100,
+    progressEndValue = 75,
+    speed = 2500;
 let progress = setInterval(() => {
     // progressStartValue--;
-    progressStartValue = 100;
+    progressStartValue = progressStartValue - 6.25;
     progressValue.textContent= `${progressStartValue}%`
     console.log(progressStartValue)
     if(progressStartValue <= 35)
     {
         circularProgress.style.background = `conic-gradient(#ff0000 ${progressStartValue * 3.6}deg , #ededed 0deg)`;
     }
-    else if(progressStartValue > 35 && progressStartValue < 55)
+    else if(progressStartValue > 35 && progressStartValue < 76)
     {
         circularProgress.style.background = `conic-gradient(#ffa400 ${progressStartValue * 3.6}deg , #ededed 0deg)`;
     }
     else{
         circularProgress.style.background = `conic-gradient(#00ff00 ${progressStartValue * 3.6}deg , #ededed 0deg)`;
     }
-    if(progressStartValue==progressEndValue)
+    if(progressStartValue<=progressEndValue)
     {
         clearInterval(progress);
     }
@@ -102,7 +102,7 @@ let p2 = setInterval(() => {
     s = Math.random();
     t = Math.random();
     u = Math.random();
-    console.log(v);
+    // console.log(v);
     // setGaugeValue(gaugeElement1, v ,"methane");
     if(v>0.01 && v<0.015)
     {

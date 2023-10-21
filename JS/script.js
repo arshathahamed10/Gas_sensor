@@ -55,13 +55,36 @@ function setGaugeValue(gauge, value,gas) {
   if(gas=="hs")
   {
     gauge.querySelector(".gauge__cover").textContent = `${Math.round(
-      value *500
+      value * 500
     )} ppm`;
+    if(value >= 0.13)
+    {
+      gauge.querySelector(".gauge__fill").style.background=`#ff0000`;
+    }
+    else
+    {
+      gauge.querySelector(".gauge__fill").style.background=`#00ff00`;
+    }
+  }
+  else
+  {
+    if(value <= 0.5)
+    {
+      gauge.querySelector(".gauge__fill").style.background=`#00ff00`;
+    }
+    else if(value > 0.5 && value < 0.75)
+    {
+      gauge.querySelector(".gauge__fill").style.background=`#ffa400`;
+    }
+    else if(value > 0.75)
+    {
+      gauge.querySelector(".gauge__fill").style.background=`#ff0000`;
+    }
   }
   if(gas=="sd")
   {
     gauge.querySelector(".gauge__cover").textContent = `${Math.round(
-      value *100
+      value * 100
     )} ppm`;
   }
   if(gas=="amm")
@@ -69,19 +92,6 @@ function setGaugeValue(gauge, value,gas) {
     gauge.querySelector(".gauge__cover").textContent = `${Math.round(
       value *300
     )} ppm`;
-  }
-  
-  if(value <= 0.5)
-  {
-    gauge.querySelector(".gauge__fill").style.background=`#00ff00`;
-  }
-  else if(value > 0.5 && value < 0.75)
-  {
-    gauge.querySelector(".gauge__fill").style.background=`#ffa400`;
-  }
-  else if(value > 0.75)
-  {
-    gauge.querySelector(".gauge__fill").style.background=`#ff0000`;
   }
 }
 let v = 0;
@@ -102,7 +112,7 @@ let p2 = setInterval(() => {
     {
       setGaugeValue(gaugeElement2, r,"co");
     }
-    if(s>= 0.02 & s<=0.04)
+    if(s>= 0.13 && s<=0.15)
     {
       setGaugeValue(gaugeElement3, s,"hs");
     }

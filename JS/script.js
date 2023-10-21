@@ -117,7 +117,7 @@ let p2 = setInterval(() => {
 }, 20);
 let bp = 0;
 // ppm range - 
-sam = 600;
+sam = 100;
 let pp =setInterval(() => {
     bp = Math.random() * 100;
     if(bp>=70 && bp<=80)

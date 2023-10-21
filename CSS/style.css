@@ -34,7 +34,7 @@ h1
 {
     
     display: flex;
-    min-width:1200px;
+    min-width:1300px;
     padding:50px 0;
     background-color: #fff;
     border-radius: 10px;
@@ -111,16 +111,19 @@ h1
 }
 .gas-level
 {
+    width: 100%;
+    min-width: 300px;
+    border-radius: 20px;
     padding: 50px;
+    gap: 100px 100px;
   background-color: #fff;
 }
 .gauge {
-  width: 100%;
-  min-width: 900px;
+  
   font-size: 32px;
   color: #004033;
   display: grid;
-  gap: 100px 100px;
+  /* gap: 100px 100px; */
   grid-template-columns: repeat(3, 1fr); /* Three columns in the first row */
   grid-template-rows: auto auto; /* Two rows */
   
@@ -239,7 +242,7 @@ h2 {
 }
 .water1
 {
-    min-width: 1200px;
+    min-width: 1300px;
     display: flex;
     /* align-items: center; */
     height: 550px;

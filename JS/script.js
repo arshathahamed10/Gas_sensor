@@ -43,7 +43,7 @@ function setGaugeValue(gauge, value,gas) {
   if(gas=="methane")
   {
     gauge.querySelector(".gauge__cover").textContent = `${Math.round(
-      value * 150000
+      (value * 500) / 0.9
     )} ppm`;
   }
   if(gas=="co")
@@ -94,7 +94,7 @@ let p2 = setInterval(() => {
     u = Math.random();
     console.log(v);
     // setGaugeValue(gaugeElement1, v ,"methane");
-    if(v>0.05 && v<0.08)
+    if(v>0.01 && v<0.02)
     {
         setGaugeValue(gaugeElement1, v ,"methane");
     }

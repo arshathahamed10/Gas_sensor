@@ -57,7 +57,7 @@ function setGaugeValue(gauge, value,gas) {
     gauge.querySelector(".gauge__cover").textContent = `${Math.round(
       value * 500
     )} ppm`;
-    if(value >= 0.13)
+    if(value >= 0.18)
     {
       gauge.querySelector(".gauge__fill").style.background=`#ff0000`;
     }
@@ -112,7 +112,7 @@ let p2 = setInterval(() => {
     {
       setGaugeValue(gaugeElement2, r,"co");
     }
-    if(s>= 0.13 && s<=0.15)
+    if(s>= 0.18 && s<=0.2)
     {
       setGaugeValue(gaugeElement3, s,"hs");
     }
@@ -130,7 +130,7 @@ let bp = 0;
 sam = 100;
 let pp =setInterval(() => {
     bp = Math.random() * 100;
-    if(bp>=70 && bp<=80)
+    if(bp>=75 && bp<=80)
     {
         ppmElement.textContent= `${Math.round(bp)} BPM`;
     }

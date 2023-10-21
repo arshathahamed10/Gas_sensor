@@ -1,10 +1,12 @@
+
 let circularProgress = document.querySelector(".circular-progress"),
 progressValue = document.querySelector(".progress-value");
 let progressStartValue = 95,
     progressEndValue = 10,
-    speed = 50;
+    speed = 500;
 let progress = setInterval(() => {
-    progressStartValue--;
+    // progressStartValue--;
+    progressStartValue = 100;
     progressValue.textContent= `${progressStartValue}%`
     console.log(progressStartValue)
     if(progressStartValue <= 35)
@@ -30,18 +32,45 @@ const gaugeElement3 = document.querySelector(".gauge__body3");
 const gaugeElement4 = document.querySelector(".gauge__body4");
 const gaugeElement5 = document.querySelector(".gauge__body5");
 const ppmElement = document.querySelector(".ppm");
-let sp = 1500;
-function setGaugeValue(gauge, value) {
+let sp = 500;
+function setGaugeValue(gauge, value,gas) {
   if (value < 0 || value > 1.01) {
     return;
   }
-
   gauge.querySelector(".gauge__fill").style.transform = `rotate(${
     value / 2
   }turn)`;
-  gauge.querySelector(".gauge__cover").textContent = `${Math.round(
-    value * 100
-  )} ppm`;
+  if(gas=="methane")
+  {
+    gauge.querySelector(".gauge__cover").textContent = `${Math.round(
+      value * 150000
+    )} ppm`;
+  }
+  if(gas=="co")
+  {
+    gauge.querySelector(".gauge__cover").textContent = `${Math.round(
+      value * 200
+    )} ppm`;
+  }
+  if(gas=="hs")
+  {
+    gauge.querySelector(".gauge__cover").textContent = `${Math.round(
+      value *500
+    )} ppm`;
+  }
+  if(gas=="sd")
+  {
+    gauge.querySelector(".gauge__cover").textContent = `${Math.round(
+      value *100
+    )} ppm`;
+  }
+  if(gas=="amm")
+  {
+    gauge.querySelector(".gauge__cover").textContent = `${Math.round(
+      value *300
+    )} ppm`;
+  }
+  
   if(value <= 0.5)
   {
     gauge.querySelector(".gauge__fill").style.background=`#00ff00`;
@@ -64,41 +93,43 @@ let p2 = setInterval(() => {
     t = Math.random();
     u = Math.random();
     console.log(v);
-    if(v<0.81)
+    // setGaugeValue(gaugeElement1, v ,"methane");
+    if(v>0.05 && v<0.08)
     {
-        setGaugeValue(gaugeElement1, v);
+        setGaugeValue(gaugeElement1, v ,"methane");
     }
-    if(r<0.81)
+    if(r>0.05 && r<0.08)
     {
-      setGaugeValue(gaugeElement2, r);
+      setGaugeValue(gaugeElement2, r,"co");
     }
-    if(s<0.81)
+    if(s>= 0.02 & s<=0.04)
     {
-      setGaugeValue(gaugeElement3, s);
+      setGaugeValue(gaugeElement3, s,"hs");
     }
-    if(t<0.81)
+    if(t>=0.01 && t<=0.021)
     {
-      setGaugeValue(gaugeElement4, t);
+      setGaugeValue(gaugeElement4, t , "sd");
     }
-    if(u<0.81)
+    if(u>=0.06 && u<=0.09)
     {
-      setGaugeValue(gaugeElement5, u);
+      setGaugeValue(gaugeElement5, u , "amm");
     }
-}, sp);
+}, 20);
 let bp = 0;
 // ppm range - 
+sam = 600;
 let pp =setInterval(() => {
     bp = Math.random() * 100;
-    if(bp>=60 && bp<=101)
+    if(bp>=70 && bp<=80)
     {
         ppmElement.textContent= `${Math.round(bp)} BPM`;
     }
     
-    if(bp >=101)
-    {
-        clearInterval(pp);
-    }
-}, speed);
+    // if(bp >=101)
+    // {
+    //     clearInterval(pp);
+    // }
+}, sam);
 // Get the water element and water level span
 const waterElement = document.getElementById("water");
 const waterLevelSpan = document.getElementById("waterLevel");
@@ -109,14 +140,15 @@ let waterLevel = 0;
 // Update the water level and display
 function updateWaterLevel() {
     waterElement.style.height = `${(waterLevel / 10) * 100}%`;
-    waterLevelSpan.textContent = waterLevel;
+    waterLevelSpan.textContent = 10 - waterLevel;
 }
 
 // Example: Increment the water level by 1 meter every 2 seconds (for demonstration)
 setInterval(() => {
     // if (waterLevel < 10) {
     //     waterLevel++;
-    waterLevel = Math.round(Math.random() * 10);
-    updateWaterLevel();
-
+        waterLevel = 1;
+    // waterLevel = Math.round(Math.random() * 10);
+        updateWaterLevel();
+    
 },2000);

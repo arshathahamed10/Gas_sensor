@@ -115,7 +115,7 @@ h1
     min-width: 300px;
     border-radius: 20px;
     padding: 50px;
-    gap: 100px 100px;
+    /* gap: 100px 100px; */
   background-color: #fff;
 }
 .gauge {
@@ -123,7 +123,7 @@ h1
   font-size: 32px;
   color: #004033;
   display: grid;
-  /* gap: 100px 100px; */
+  gap: 100px 100px;
   grid-template-columns: repeat(3, 1fr); /* Three columns in the first row */
   grid-template-rows: auto auto; /* Two rows */
   

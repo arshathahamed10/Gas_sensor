@@ -154,11 +154,15 @@ function updateWaterLevel() {
 }
 
 // Example: Increment the water level by 1 meter every 2 seconds (for demonstration)
-setInterval(() => {
+let fin = setInterval(() => {
     // if (waterLevel < 10) {
     //     waterLevel++;
-        waterLevel = 1;
+      waterLevel++;
     // waterLevel = Math.round(Math.random() * 10);
         updateWaterLevel();
+        if(waterLevel >= 10)
+        {
+          clearInterval(fin);
+        }
     
-},2000);
+},1800);

@@ -71,11 +71,11 @@ h1
 .circular-progress
 {
     position: relative;
-    background-color: #800080;
+    background-color: #00ff00;
     width:250px;
     height : 250px;
     border-radius: 50%;
-    background: conic-gradient(#800080 3.6deg , #ededed 0deg);
+    background: conic-gradient(#00ff00 3.6deg , #ededed 0deg);
     display: flex;
     align-items: center;
     justify-content: center;

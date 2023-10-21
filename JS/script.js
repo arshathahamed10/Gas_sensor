@@ -59,14 +59,30 @@ let v = 0;
 let p2 = setInterval(() => {
     
     v = Math.random();
+    r = Math.random();
+    s = Math.random();
+    t = Math.random();
+    u = Math.random();
     console.log(v);
     if(v<0.81)
     {
         setGaugeValue(gaugeElement1, v);
-        setGaugeValue(gaugeElement2, v);
-        setGaugeValue(gaugeElement3, v);
-        setGaugeValue(gaugeElement4, v);
-        setGaugeValue(gaugeElement5, v);
+    }
+    if(r<0.81)
+    {
+      setGaugeValue(gaugeElement2, r);
+    }
+    if(s<0.81)
+    {
+      setGaugeValue(gaugeElement3, s);
+    }
+    if(t<0.81)
+    {
+      setGaugeValue(gaugeElement4, t);
+    }
+    if(u<0.81)
+    {
+      setGaugeValue(gaugeElement5, u);
     }
 }, sp);
 let bp = 0;
@@ -83,3 +99,24 @@ let pp =setInterval(() => {
         clearInterval(pp);
     }
 }, speed);
+// Get the water element and water level span
+const waterElement = document.getElementById("water");
+const waterLevelSpan = document.getElementById("waterLevel");
+
+// Set the initial water level (in meters)
+let waterLevel = 0;
+
+// Update the water level and display
+function updateWaterLevel() {
+    waterElement.style.height = `${(waterLevel / 10) * 100}%`;
+    waterLevelSpan.textContent = waterLevel;
+}
+
+// Example: Increment the water level by 1 meter every 2 seconds (for demonstration)
+setInterval(() => {
+    // if (waterLevel < 10) {
+    //     waterLevel++;
+    waterLevel = Math.round(Math.random() * 10);
+    updateWaterLevel();
+
+},2000);

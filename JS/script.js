@@ -1,12 +1,12 @@
 
 let circularProgress = document.querySelector(".circular-progress"),
 progressValue = document.querySelector(".progress-value");
-let progressStartValue = 100,
+let progressStartValue = 75,
     progressEndValue = 75,
     speed = 2500;
 let progress = setInterval(() => {
     // progressStartValue--;
-    progressStartValue = progressStartValue - 6.25;
+    progressStartValue = 75;
     progressValue.textContent= `${progressStartValue}%`
     console.log(progressStartValue)
     if(progressStartValue <= 35)
@@ -112,7 +112,7 @@ let p2 = setInterval(() => {
     {
       setGaugeValue(gaugeElement2, r,"co");
     }
-    if(s>= 0.18 && s<=0.2)
+    if(s>= 0.02 && s<=0.04)
     {
       setGaugeValue(gaugeElement3, s,"hs");
     }
@@ -157,7 +157,7 @@ function updateWaterLevel() {
 let fin = setInterval(() => {
     // if (waterLevel < 10) {
     //     waterLevel++;
-      waterLevel = 1;
+      waterLevel++;
     // waterLevel = Math.round(Math.random() * 10);
         updateWaterLevel();
         if(waterLevel >= 10)

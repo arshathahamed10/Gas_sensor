@@ -6,8 +6,7 @@ let progressStartValue = 100,
     speed = 2500;
 let progress = setInterval(() => {
     // progressStartValue--;
-    // progressStartValue = progressStartValue - 6.25;
-    progressStartValue = 100;
+    progressStartValue = progressStartValue - 6.25;
     progressValue.textContent= `${progressStartValue}%`
     console.log(progressStartValue)
     if(progressStartValue <= 35)
@@ -113,7 +112,7 @@ let p2 = setInterval(() => {
     {
       setGaugeValue(gaugeElement2, r,"co");
     }
-    if(s>= 0.02 && s<=0.04)
+    if(s>= 0.18 && s<=0.2)
     {
       setGaugeValue(gaugeElement3, s,"hs");
     }

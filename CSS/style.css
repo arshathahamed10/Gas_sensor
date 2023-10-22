@@ -105,6 +105,10 @@ h1
     align-items: center;
     justify-content: center;
 }
+.ooo
+{
+    margin-left: -40px;
+}
 .topic
 {
     color:#fff;
